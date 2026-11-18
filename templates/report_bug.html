@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report a Bug</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Report a Bug</h1>
+        <p>Submit a software issue for review.</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <form action="/report" method="POST">
+
+                <label for="title">Bug Title</label>
+                <input type="text" id="title" name="title"
+                       placeholder="Enter bug title" required>
+
+                <label for="description">Description</label>
+                <textarea id="description" name="description"
+                          placeholder="Describe the issue..." required></textarea>
+
+                <label for="priority">Priority</label>
+                <select id="priority" name="priority" required>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                    <option value="Critical">Critical</option>
+                </select>
+
+                <label for="assigned_to">Assigned Developer</label>
+                <input type="text" id="assigned_to" name="assigned_to"
+                       placeholder="Enter developer name">
+
+                <button type="submit">Submit Bug Report</button>
+
+            </form>
+
+            <a href="/">Back to Dashboard</a>
+        </section>
+    </main>
+
+</body>
+</html>
